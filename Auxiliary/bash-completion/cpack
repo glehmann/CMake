@@ -2,8 +2,10 @@
 
 _cpack()
 {
-    local cur prev words cword
-    _init_completion -n = || return
+    local cur prev
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
 
     case "$prev" in
         -G)
